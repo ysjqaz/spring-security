@@ -31,10 +31,7 @@ jobs:
   build_jdk_8:
     name: Build JDK 8
     needs: [prerequisites]
-    strategy:
-      matrix:
-        os: [ubuntu-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     if: needs.prerequisites.outputs.runjobs
     steps:
       - uses: actions/checkout@v2
